@@ -1,31 +1,38 @@
 # Código da Aplicação
 
-Esta pasta contém o código do seu agente financeiro.
+Esta seção apresenta o protótipo funcional do agente financeiro desenvolvido em Python, integrando a interface em Streamlit à API de inteligência artificial.
 
-## Estrutura Sugerida
+## Estrutura do Projeto
 
-```
+```text
 src/
-├── app.py              # Aplicação principal (Streamlit/Gradio)
-├── agente.py           # Lógica do agente
-├── config.py           # Configurações (API keys, etc.)
-└── requirements.txt    # Dependências
+├── app.py              # Aplicação principal unificada (Streamlit + IA)
+└── requirements.txt    # Dependências do projeto
 ```
-
-## Exemplo de requirements.txt
-
+## Dependências (requirements.txt)
 ```
 streamlit
-openai
-python-dotenv
+google-generativeai
+pandas
 ```
 
-## Como Rodar
+## Código da Aplicação (src/app.py)
+O código abaixo carrega a base de conhecimento (arquivos JSON e CSV do cliente João Silva), monta o contexto dinâmico de forma estruturada e gerencia a conversa utilizando a API do Gemini.
 
-```bash
-# Instalar dependências
+(Caso prefira usar o Ollama local, basta descomentar a função alternativa indicada no código).
+
+## Código Completo
+Todo o código-fonte está no arquivo app.py.
+
+## Como Executar a Aplicação
+Siga os comandos abaixo no seu terminal para colocar o agente em funcionamento:
+```
+# 1. Navegar até a pasta do código do projeto
+cd src
+
+# 2. Instalar as dependências leves necessárias
 pip install -r requirements.txt
 
-# Rodar a aplicação
+# 3. Iniciar o servidor local da aplicação Streamlit
 streamlit run app.py
 ```
